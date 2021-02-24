@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta http-equiv="pragma" content="no-cache"/> 
+	<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+	<meta http-equiv="expires" content="0"/>
+
+	<title>MD 2019</title>
+	<!-- Bootstrap core CSS  -->
+	<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/creative.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/CMS_style.css" rel="stylesheet" type="text/css" />
+	<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+	<div class="loadingdiv" id="loading" style="display:none;">
+		<img class="loading" src="img/loading.gif">
+	</div>S
+	<div class="proregister_spacehd"></div>
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10">
+					<a class="navbar-brand js-scroll-trigger" href="index.html" style="float:left;"><img class="logo"
+							src="./img/logo.png" width="200px" alt="MD2019"><span
+							style="font-size:10px; color:#666;">CONFERENCE MANAGEMENT SYSTEM</span></a>
+				</div>
+				<div class="col-sm-2">
+					<input type='button' id='logout_btn' value='logout' class='bnlogin'>
+				</div>
+			</div>
+		</div>
+
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="margin-top:57px; background-color:#EEE;"
+		id="mainNav">
+		<div class="container">
+			<div class="row" id="menu">
+			</div>
+		</div>
+	</nav>
+
+	<div class="mainrow">
+		<div class="container">
+			<div class="row progressbar">
+				<div class="activebar0">
+				</div>
+				<div class="normalbar1">
+				</div>
+				<div class="normalbar2">
+				</div>
+				<div class="normalbar3">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<p>Please provide the following information in order to register for the Conference.</p>
+		</div>
+		<div class="container" style="border-right:2px solid #DDD;border-left:2px solid #DDD;border-bottom:2px solid #DDD;">
+			<h6>Personam Inforamtion
+			</h6>
+			<div class="row" style="margin-top:20px;">
+				<div class='col-sm-3' style='text-align: left;'>
+					<label style='font-size:20px; color:#595758'>First name :</label>
+				</div>
+				<div class='col-sm-9' style='padding-bottom:25px;'>
+					<p id="FNAME"></p>
+					<hr>
+
+				</div>
+				<div class='col-sm-3' style='text-align: left;'>
+					<label style='font-size:20px; color:#595758'>Last/Familt Name :</label>
+				</div>
+				<div class='col-sm-9' style='padding-bottom:25px;'>
+					<p id="LNAME"></p>
+					<hr>
+
+				</div>
+				<div class='col-sm-3' style='text-align: left;'>
+					<label style='font-size:20px; color:#595758'>Email :</label>
+				</div>
+				<div class='col-sm-9' style='padding-bottom:25px;'>
+					<p id="EMAIL"></p>
+					<hr>
+
+				</div>
+
+				<div class='col-sm-3' style='text-align: left;'>
+					<label style='font-size:20px; color:#595758'>Special Dietary Needs :</label>
+				</div>
+				<div class='col-sm-9' style="padding-bottom:25px;">
+					<select id="needs">
+						<option value='0'>No special Dietary Needs</option>
+						<option value='1'>vegan</option>
+					</select>
+				</div>
+				<div class='col-sm-3' style='text-align: left;'>
+					<label style='font-size:20px; color:#595758'>Detailed Dietary Needs :</label>
+				</div>
+				<div class='col-sm-9' style="padding-bottom:25px;">
+					<input id='cms_needs' type='text' class='form-control'>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container" id="bnarea" style="padding-top:25px;">
+			<div class="row">
+				<div class='col-sm-3'>
+					<input type='button' id='btncancel' value='CANCEL REGISTRATION' class='canbutton'>
+				</div>
+				<div class='col-sm-3'>
+					<input type='button' id='bnnext' value='NEXT STEP' class='button'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/cookie.js?ver=2019092501"></script>
+	<script src="js/ICHM0001.js?ver=2019092501"></script>
+	<script src="js/ICHM0010.js?ver=2019092501"></script>
+	<script src="js/ICHM0030.js?ver=2019110601"></script>
+	<script>
+		//checkproregister();
+		getSelfInfo();
+		getProres();
+	</script>
+</body>
+
+
+</html>

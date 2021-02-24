@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MD2019 Reviewer - Login</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-dark">
+  <div class="loadingdiv" id="loading" style="display:none;">
+    <img class="loading" src="../CMS/img/loading.gif">
+  </div>
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Reviewer Login</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required"
+                autofocus="autofocus">
+              <label for="inputEmail">Email address</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+              <label for="inputPassword">Password</label>
+            </div>
+          </div>
+          <a class="btn btn-primary btn-block" onclick="login()">Login</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <script src="js/cookie.js?ver=2019071401"></script>
+  <script>
+    reviewerloginCheckToken();
+    var domain = window.location.hostname;
+    function login() {
+      var Acc = $('#inputEmail').val();
+      var Psw = $('#inputPassword').val();
+      $.ajax({
+        type: "POST",
+        url: "Control/CMSreviewer0010.php",
+        async: false,
+        dataType: "json",
+        data: {
+          action: 'login',
+          Acc: Acc,
+          Psw: Psw
+        },
+        success: function (data) {
+          if (data.isSuccess) {
+            SetCookie("REVIEWER_token", data.token, 1, domain);
+            SetCookie("REVIEWER_Rid", data.Rid, 1, domain);
+            if(data.IsAgree==1)
+              document.location.href = 'reviewlist.html';
+            else if(data.IsAgree==null)
+              document.location.href = 'reviewercheck.html';
+            else if(data.IsAgree==0)
+              alert("You rejected to become a reviewer of MD2019 before.");
+          }
+          else {
+            alert(data.msg);
+          }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+          alert(XMLHttpRequest.readyState + XMLHttpRequest.status + XMLHttpRequest.responseText);
+        }
+      })
+    }
+  </script>
+
+</body>
+
+</html>

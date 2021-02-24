@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta http-equiv="pragma" content="no-cache"/> 
+	<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+	<meta http-equiv="expires" content="0"/>
+
+	<title>MD 2019</title>
+	<!-- Bootstrap core CSS  -->
+	<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/creative.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/CMS_style.css" rel="stylesheet" type="text/css" />
+
+	<!-- Custom fonts for this template -->
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+	<div class="loadingdiv" id="loading" style="display:none;">
+		<img class="loading" src="img/loading.gif">
+	</div>
+	<div class="spacehd"></div>
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10">
+					<a class="navbar-brand js-scroll-trigger" href="index.html" style="float:left;"><img class="logo"
+							src="./img/logo.png" width="200px" alt="MD2019"><span
+							style="font-size:10px; color:#666;">CONFERENCE MANAGEMENT SYSTEM</span></a>
+				</div>
+				<div class="col-sm-2">
+					<input type='button' id='logout_btn' value='logout' class='bnlogin'>
+				</div>
+			</div>
+		</div>
+
+	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="margin-top:57px; background-color:#EEE;"
+		id="mainNav">
+		<div class="container">
+			<div class="row" id="menu">
+			</div>
+		</div>
+	</nav>
+	<form enctype="multipart/form-data" id="paperinfo" method="POST" name="paperinfo">
+		<div class="row mainrow">
+			<div class="container">
+				<div class="weldiv">
+					<h5>Paper Proposal Submission</h5>
+					<p>Please fill in the of following. Required fields are marked with<span style="color:red">*<span>
+					</p>
+				</div>
+				<div class="row">
+					<div class='col-sm-3'>
+						<label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+								style="color:#FF0000;">*</span>Title :</label>
+					</div>
+					<div class='col-sm-9' style="padding-bottom:25px;">
+						<input id='ichm_title' name='ichm_title' type='text' class='form-control' placeholder='*Title'>
+					</div>
+					<div class='col-sm-3'>
+						<label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+								style="color:#FF0000;">*</span>Paper category :</label>
+					</div>
+					<div class='col-sm-9' style="padding-bottom:25px;">
+						<select class='form-control' id="ichm_session">
+						</select>
+                    </div>
+                    <div class='col-sm-3'>
+						<label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+								style="color:#FF0000;">*</span>Topic :</label>
+					</div>
+					<div class='col-sm-9' style="padding-bottom:25px;">
+						<select class='form-control' id="ichm_topic">
+						</select>
+                    </div>
+                    <div class='col-sm-3'>
+						<label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+								style="color:#FF0000;">*</span>Presentation :</label>
+					</div>
+					<div class='col-sm-9' style="padding-bottom:25px;">
+						<select class='form-control' id="ichm_presentation">
+                            <option value="0">Oral</option>
+                            <option value="1">Poster</option>
+						</select>
+					</div>
+
+					<div class="col-sm-12">
+						<h6>Proposal Authors</h6>
+					</div>
+					<div class="col-sm-12 author_table">
+						<table id="author">
+							<thead>
+								<tr>
+									<th>Order</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Organization</th>
+									<th>Action</th>
+									<th style="display:none">Country</th>
+									<th style="display:none">Department</th>
+									<th style="display:none">FName</th>
+									<th style="display:none">LName</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div class="col-sm-12">
+						<p><span style="color:#000; font-weight:bold;">IMPROTANT NOTE:</span> Please add <span
+								style="color:#000; font-weight:bold;">ALL co-authors </span>of submission.</p>
+					</div>
+					<div class="col-sm-12 add_author">
+						<p id="addauthor">Add Co-Author</p>
+					</div>
+				</div>
+				<div class="container" id="addarea" style="display:none;">
+					<div class="row" style="padding-top:25px; padding-bottom:25px;">
+						<div class='col-sm-12' style='text-align: left;'>
+							<p>Please fill in the following information in oder to create a CMS account. Required fields
+								are marked with * .</p>
+						</div>
+						<div class='col-sm-3' style='text-align: left;'>
+							<label style='font-size:20px; color:#595758'><span style="color:#FF0000;">*</span>E-mail
+								:</label>
+						</div>
+						<div class='col-sm-9' style="padding-bottom:25px;">
+							<input id='ichm_mail' type='text' class='form-control' placeholder='*E-mail'>
+						</div>
+						<div class='col-sm-3' style='text-align: left;'>
+							<label style='font-size:20px; color:#595758'><span style="color:#FF0000;">*</span>First name
+								:</label>
+						</div>
+						<div class='col-sm-9' style="padding-bottom:25px;">
+							<input id='ichm_fname' type='text' class='form-control' placeholder='*First name'>
+						</div>
+						<div class='col-sm-3' style='text-align: left;'>
+							<label style='font-size:20px; color:#595758'><span
+									style="color:#FF0000;">*</span>Last/Familt Name :</label>
+						</div>
+						<div class='col-sm-9' style="padding-bottom:25px;">
+							<input id='ichm_lname' type='text' class='form-control' placeholder='*Last/Familt Name'>
+						</div>
+
+						<div class='col-sm-3' style='text-align: left;'>
+							<label style='font-size:20px; color:#595758'><span style="color:#FF0000;">*</span>Country
+								:</label>
+						</div>
+						<div class='col-sm-9' style="padding-bottom:25px;">
+							<select class='form-control' id="ichm_country">
+								<option value="0">Please select an option</option>
+							</select>
+						</div>
+						<div class='col-sm-3' style='text-align: left;'>
+							<label style='font-size:20px; color:#595758'><span
+									style="color:#FF0000;">*</span>Organization :</label>
+						</div>
+						<div class='col-sm-9' style="padding-bottom:25px;">
+							<input id='ichm_orga' type='text' class='form-control' placeholder='*Organization'>
+						</div>
+
+						<div class='col-sm-3' style='text-align: left;'>
+							<label style='font-size:20px; color:#595758'><span style="color:#FF0000;">*</span>Department
+								:</label>
+						</div>
+						<div class='col-sm-9' style="padding-bottom:25px;">
+							<input id='ichm_dept' type='text' class='form-control' placeholder='*Department'>
+						</div>
+						<input type="hidden" name="author_string" id="author_string" />
+						<div class='col-sm-3'>
+							<div class="authorareabn" id="bnadd">ADD</div>
+						</div>
+						<div class='col-sm-3'>
+							<div class="authorareabn" id="bncler">CLEAR</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class='col-sm-12' style='text-align: left;'>
+						<label for='ID' style='font-size:20px; color:#595758'><span
+								style="color:#FF0000;">*</span>Select file to upload <span style="color:red">(please upload both .PDF files and
+							.DOCX/.DOC files):</span></label>
+					</div>
+				</div>
+				<div class="row" style="margin-top:10px;margin-left:20px;">
+					<div class='col-sm-9 fileContainer'>
+						<input type="file" name="upfile" id="upfile" />
+					</div>
+					<div class='col-sm-9 fileContainer'>
+						<p>(only .PDF files accepted. maximum file size 150MB)</p>
+					</div>
+				</div>
+				<div class="row" style="margin-top:5px;margin-left:20px;">
+					<div class='col-sm-9 fileContainer'>
+						<input type="file" name="upfile2" id="upfile2" />
+					</div>
+					<div class='col-sm-3' style='text-align: left;'>
+					</div>
+					<div class='col-sm-9 fileContainer'>
+						<p>(only .DOCX or .DOC files accepted. maximum file size 150MB)</p>
+					</div>
+				</div>
+			</div>
+			<div class="container" id="bnarea" style="padding-top:25px;">
+				<div class="row">
+					<div class='col-sm-3' style='text-align: right;'>
+						<div class="canbutton" id="btncancel1">CANCEL</div>
+					</div>
+					<div class='col-sm-6'>
+						<input type="submit" id="btnnext1" class="button" value="NEXT STEP" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<script src="js/cookie.js?ver=2019092501"></script>
+	<script src="js/ICHM0001.js?ver=2019092501"></script>
+	<script src="js/ICHM0002.js?ver=2019101501"></script>
+	<script src="js/ICHM0020.js?ver=2019111301"></script>
+	<script>
+        //checkDeadline();
+		getCountry();
+		getSession();
+        getTopic();
+		getMainAuthor();
+	</script>
+</body>
+
+</html>

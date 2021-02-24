@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta http-equiv="pragma" content="no-cache"/> 
+	<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+	<meta http-equiv="expires" content="0"/>
+
+    <title>MD 2019</title>
+    <!-- Bootstrap core CSS  -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/CMS_style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th,
+        td {
+            border-top: 1px solid #AAA;
+            border-bottom: 1px solid #AAA;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        th {
+            background-color: #FF88C2;
+            width: 250px;
+        }
+
+        .topic_td {
+            background-color: #FFB7DD;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div class="loadingdiv" id="loading" style="display:none;">
+        <img class="loading" src="img/loading.gif">
+    </div>
+    <div class="proregister_spacehd"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a class="navbar-brand js-scroll-trigger" href="index.html" style="float:left;"><img class="logo"
+                            src="./img/logo.png" width="200px" alt="MD2019"><span
+                            style="font-size:10px; color:#666;">CONFERENCE MANAGEMENT SYSTEM</span></a>
+                </div>
+                <div class="col-sm-2">
+                    <input type='button' id='logout_btn' value='logout' class='bnlogin'>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="margin-top:57px; background-color:#EEE;"
+        id="mainNav">
+        <div class="container">
+            <div class="row" id="menu">
+            </div>
+        </div>
+    </nav>
+    <div class="mainrow">
+        <div class="container" id='setp1'>
+            <div class="row progressbar">
+                <div class="col-sm-12">
+                    <div class="clearbar0">
+                    </div>
+                    <div class="activebar1">
+                    </div>
+                    <div class="normalbar2">
+                    </div>
+                    <div class="normalbar3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="margin-top:1%;border-right:2px solid #DDD;border-left:2px solid #DDD;border-bottom:2px solid #DDD; padding-bottom:10px;">
+            <h6>Select Submission</h6>
+            <select id="submission_option" style="width:100%;height:30px;">
+                <option value="null">
+                    ----------------------------------------------------------------------------------------------------Please
+                    Select an
+                    Option----------------------------------------------------------------------------------------------------
+                </option>
+                <option value="0">No Submissiton (Just attend Conference or Workshop)</option>
+            </select>
+            <hr />
+            <h6>Conference Fee
+            </h6>
+            <span>
+                *The reduced registration fees with <span style="color:rgb(0, 220, 255)">blue background</span> are only
+                available for <span style="font-weight:bold;color:#414141;">student</span>.</br>
+                *The reduced registration fees with <span style="color:red">red font</span> are only available for <span
+                    style="font-weight:bold;color:#414141;">Taiwanese participant</span>.</br>
+                <span style="margin-left:15px;">**The reduced registration fees with <span style="color:red">red
+                        font</span> and <span style="color:rgb(0, 220, 255)">blue background</span> are only available
+                    for <span style="font-weight:bold;color:#414141;">Taiwanese student</span>.</span></br>
+                <span style="margin-left:15px;">**The reduced registration fees with <span style="color:red">red
+                        font</span> and <span style="color:yellow">yellow background</span> are only available for <span
+                        style="font-weight:bold;color:#414141;">Medical Design Member/Employee in Formosa Plastics
+                        Group</span>.</span></br>
+                *If You are an <span style="font-weight:bold;color:#414141;">international student</span> or <span
+                    style="font-weight:bold;color:#414141;">Taiwanese participant (including Taiwanese student and
+                    Medical Design Member/Employee in Formosa Plastics Group)</span>, please go to the <span
+                    style="font-weight:bold;color:#ef5371;">IDENTITY VALIDATION page</span> to upload realated
+                information to proof your identity, after we confirm your identity, you can receive a discounted
+                fee.</br>
+            </span>
+            <div class="row" style="margin-top:10px;">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Early bird(Payment Deadline：19 September 2019) </th>
+                        <th>Regular(Payment Deadline：19 October 2019)</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center" class="topic_td">International</td>
+                    </tr>
+                    <tr>
+                        <td>Delegate</td>
+                        <td><input type='radio' value='1' name='Fee' required='required'><label for='1'>US$500</label>
+                        </td>
+                        <td><input type='radio' value='7' name='Fee' required='required'><label for='7'>US$600</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Student</td>
+                        <td><input type='radio' value='2' name='Fee' required='required'><label for='2'
+                                style="background-color:rgb(0, 220, 255);">US$200</label>
+                        </td>
+                        <td><input type='radio' value='8' name='Fee' required='required'><label for='8'
+                                style="background-color:rgb(0, 220, 255);">US$300</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Non Presenter</td>
+                        <td><input type='radio' value='3' name='Fee' required='required'><label for='3'>US$300</label>
+                        </td>
+                        <td><input type='radio' value='9' name='Fee' required='required'><label for='9'>US$400</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center" class="topic_td">Taiwan</td>
+                    </tr>
+                    <tr>
+                        <td>Delegate</td>
+                        <td><input type='radio' value='4' name='Fee' required='required'><label for='4'
+                                style="color:red;">NT$3,500</label>
+                        </td>
+                        <td><input type='radio' value='10' name='Fee' required='required'><label for='10'
+                                style="color:red;">NT$5,000</label></td>
+                    </tr>
+                    <tr>
+                        <td>Student</td>
+                        <td><input type='radio' value='5' name='Fee' required='required'><label for='5'
+                                style="color:red;background-color:rgb(0, 220, 255);">NT$2,000</label>
+                        </td>
+                        <td><input type='radio' value='11' name='Fee' required='required'><label for='11'
+                                style="color:red;background-color:rgb(0, 220, 255);">NT$2,500</label></td>
+                    </tr>
+                    <tr>
+                        <td>Non Presenter</td>
+                        <td><input type='radio' value='6' name='Fee' required='required'><label for='6'
+                                style="color:red;">NT$2,500</label>
+                        </td>
+                        <td><input type='radio' value='12' name='Fee' required='required'><label for='12'
+                                style="color:red;">NT$3,000</label></td>
+                    </tr>
+                    <tr>
+                        <td>Medical Design Members or </br>Employees in Formosa Plastics Group</td>
+                        <td></td>
+                        <td><input type='radio' value='13' name='Fee' required='required'><label for='13'
+                                style="color:red;background-color:yellow;">NT$2,000</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center" class="topic_td">International Partical Workshop</td>
+                    </tr>
+                    <tr>
+                        <td>Delegate</td>
+                        <td></td>
+                        <td><input type='radio' value='14' name='Fee' required='required'><label
+                                for='14'>NT$31,000</label></td>
+                    </tr>
+                    <tr>
+                        <td>Medical Design Members or </br>Employees in Formosa Plastics Group</td>
+                        <td></td>
+                        <td><input type='radio' value='15' name='Fee' required='required'><label for='15'
+                                style="color:red;background-color:yellow;">NT$29,000</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center" class="topic_td">Each Local Partical Workshop</td>
+                    </tr>
+                    <tr>
+                        <td>Delegate</td>
+                        <td></td>
+                        <td><input type='radio' value='16' name='Fee' required='required'><label for='16'
+                                style="color:red;">NT$2,000</label></td>
+                    </tr>
+                    <tr>
+                        <td>Medical Design Members or </br>Employees in Formosa Plastics Group</td>
+                        <td></td>
+                        <td><input type='radio' value='17' name='Fee' required='required'><label for='17'
+                                style="color:red;background-color:yellow;">NT$1,500</label></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="margin-top:10px;">
+                <span>
+                    *The reduced registration fees with <span style="color:rgb(0, 220, 255)">blue background</span> are
+                    only available for <span style="font-weight:bold;color:#414141;">student</span>.</br>
+                    *The reduced registration fees with <span style="color:red">red font</span> are only available for
+                    <span style="font-weight:bold;color:#414141;">Taiwanese participant</span>.</br>
+                    <span style="margin-left:15px;">**The reduced registration fees with <span style="color:red">red
+                            font</span> and <span style="color:rgb(0, 220, 255)">blue background</span> are only
+                        available for <span style="font-weight:bold;color:#414141;">Taiwanese
+                            student</span>.</span></br>
+                    <span style="margin-left:15px;">**The reduced registration fees with <span style="color:red">red
+                            font</span> and <span style="color:yellow">yellow background</span> are only available for
+                        <span style="font-weight:bold;color:#414141;">Medical Design Member/Employee in Formosa Plastics
+                            Group</span>.</span></br>
+                    *If You are an <span style="font-weight:bold;color:#414141;">international student</span> or <span
+                        style="font-weight:bold;color:#414141;">Taiwanese participant (including Taiwanese student and
+                        Medical Design Member/Employee in Formosa Plastics Group)</span>, please go to the <span
+                        style="font-weight:bold;color:#ef5371;">IDENTITY VALIDATION page</span> to upload realated
+                    information to proof your identity, after we confirm your identity, you can receive a discounted
+                    fee.</br>
+                </span>
+            </div>
+            <!--
+			
+            <div class="row">
+				<div class='col-sm-12'>
+                    <label for='0'>Early bird(Payment Deadline：19 September 2019) </label>
+                </div>
+                <div class='col-sm-12'>
+                    <input type='radio' value='1' name='Fee' required='required'>
+                    <label for='1'>International Delegate US$500* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='2' name='Fee' required='required'>
+                    <label for='2'>International Student US$200* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='3' name='Fee' required='required'>
+                    <label for='3'>International Non Presenter US$300* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='4' name='Fee' required='required'>
+                    <label for='4'>Taiwan Delegate NT$3,500* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='5' name='Fee' required='required'>
+                    <label for='5'>Taiwan Student NT$2,000* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='6' name='Fee' required='required'>
+                    <label for='6'>Taiwan Non Presenter NT$2,500* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <label for='100'>Regular(Payment Deadline：19 October 2019) </label>
+                </div>
+                <div class='col-sm-12'>
+                    <input type='radio' value='7' name='Fee' required='required'>
+                    <label for='7'>International-Delegate US$600* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='8' name='Fee' required='required'>
+                    <label for='8'>International-Student US$300* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='9' name='Fee' required='required'>
+                    <label for='9'>International-Non Presenter US$400* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='10' name='Fee' required='required'>
+                    <label for='10'>Taiwan-Delegate NT$5,000* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='11' name='Fee' required='required'>
+                    <label for='11'>Taiwan-Student NT$2,500* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='12' name='Fee' required='required'>
+                    <label for='12'>Taiwan-Non Presenter NT$3,000* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='13' name='Fee' required='required'>
+                    <label for='13'>Taiwan-Medical Design Members or Employees in Formosa Plastics Group NT$2,000* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='14' name='Fee' required='required'>
+                    <label for='14'>International Partical Workshop-Delegate NT$31,000* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='15' name='Fee' required='required'>
+                    <label for='15'>International Partical Workshop-Medical Design Members or Employees in Formosa Plastics Group NT$31,000* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='16' name='Fee' required='required'>
+                    <label for='16'>Each Local Partical Workshop-Delegate NT$2,000* </label>
+                </div>
+				<div class='col-sm-12'>
+                    <input type='radio' value='17' name='Fee' required='required'>
+                    <label for='17'>Each Local Partical Workshop-Medical Design Members or Employees in Formosa Plastics Group NT$1,500* </label>
+                </div>
+            </div>-->
+        </div>
+
+
+        <div class="container" id="bnarea" style="padding-top:25px;">
+            <div class="row">
+                <div class='col-sm-3' style='text-align: right;'>
+                    <input type='button' id='p1_btnpre' value='PREVIOUS STEP' class='canbutton'>
+                </div>
+                <div class='col-sm-3'>
+                    <input type='button' id='btncancel' value='CANCEL REGISTRATION' class='canbutton'>
+                </div>
+                <div class='col-sm-3'>
+                    <input type='button' id='p1_btnext' value='NEXT STEP' class='button'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/cookie.js?ver=2019092501"></script>
+    <script src="js/ICHM0001.js?ver=2019092501"></script>
+    <script src="js/ICHM0030.js?ver=2019110601"></script>
+    <script>
+        getProres_1();
+    </script>
+</body>
+
+</html>

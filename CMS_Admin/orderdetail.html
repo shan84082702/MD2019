@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MD2019 CMS Admin</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <style>
+        label {
+            font-size: 20pt;
+        }
+
+        input[type=radio] {
+            height: 15pt;
+            width: 15pt;
+        }
+
+        textarea {
+            width: 80%;
+            margin-left: 5%;
+        }
+
+        .card {
+            width: 80%;
+            margin: auto;
+        }
+
+        div.row {
+            width: 80%;
+            margin: auto;
+        }
+
+        .maincommand {
+            width: 80%;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0.25rem;
+            margin-bottom: 10px;
+        }
+
+        .command {
+            width: 80%;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0.25rem;
+            margin-bottom: 20px;
+            margin-left: 8%;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div class="loadingdiv" id="loading" style="display:none;">
+        <img class="loading" src="../CMS/img/loading.gif">
+    </div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+        <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="managemember.html">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>註冊人員</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="managepaper.html">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span>論文</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="manageverify.html">
+                    <i class="fas fa-fw fa-eye"></i>
+                    <span>審核人員</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="manageorder.html">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>訂單</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick=logout()>
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>登出</span></a>
+            </li>
+        </ul>
+
+        <div id="content-wrapper">
+
+            <div class="container-fluid">
+                <h4 style="margin-left:120px;">Personal Infromation：</h4>
+                <div class="card mb-3">
+                    <div style="margin-top:10px;margin-left:10px;margin-right:10px;">
+                        <p id="name"></p>
+                        <p id="country"></p>
+                        <p id="organization"></p>
+                        <p id="department"></p>
+                        <p id="email"></p>
+                        <p id="phone"></p>
+                        <p id="dietary"></p>
+                        <p id="detailed"></p>
+                    </div>
+                </div>
+                <h4 style="margin-top:10px;margin-left:120px;">Selected Paper：</h4>
+                <div class="card mb-3">
+                    <div style="margin-top:10px;margin-left:10px;margin-right:10px;">
+                        <p id="ptitle"></p>
+                        <p id="psession"></p>
+                        <p id="ptopic"></p>
+                        <p id="ppresentation"></p>
+                        <p id="pauthor"></p>
+                    </div>
+                </div>
+                <h4 style="margin-top:10px;margin-left:120px;">Order Detail：</h4>
+                <div class="card mb-3">
+                    <div style="margin-top:10px;margin-left:10px;margin-right:10px;">
+                        <p id="item"></p>
+                        <p id="amount"></p>
+                        <p id="isPay"></p>
+                        <p id="paymentTime"></p>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright © MD 2019</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <script src="js/cookie.js?ver=2019092501"></script>
+    <script src="js/ichm-2019admin.js?ver=2019103002"></script>
+    <script>
+        Getorderdetail();
+    </script>
+
+</body>
+
+</html>

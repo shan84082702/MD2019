@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta http-equiv="pragma" content="no-cache"/> 
+	<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+	<meta http-equiv="expires" content="0"/>
+
+    <title>MD 2019</title>
+    <!-- Bootstrap core CSS  -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <style>
+        .box {
+            border: 1px #bbb solid;
+            background-color: #fff;
+            width: 100%;
+            padding: 25px;
+            padding: 25px;
+            border-radius: 5px;
+        }
+
+        .form-bg {
+            border: 1px #bbb solid;
+            margin-top: 25px;
+        }
+
+        .tag-bg {
+            background-color: #DDD;
+            text-align: center;
+            margin-left: -15px;
+        }
+
+        .button {
+            color: #FFF;
+            background-color: #55a2ff;
+            padding: 12px 12px;
+            text-align: center;
+            width: 200px;
+            font-size: 18px;
+            box-shadow: 8px 8px 12px 4px #E0E0E0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .button:hover {
+            color: #FFF;
+            background-color: #2C4198;
+            padding: 12px 12px;
+            text-align: center;
+            width: 200px;
+            font-size: 18px;
+            box-shadow: 8px 8px 12px 4px #E0E0E0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .canbutton {
+            border: 1px #bbb solid;
+            color: #DDD;
+            background-color: #FFF;
+            padding: 12px 12px;
+            text-align: center;
+            width: 200px;
+            font-size: 18px;
+            box-shadow: 8px 8px 12px 4px #E0E0E0;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .canbutton:hover {
+            color: #FFF;
+            background-color: #55a2ff;
+            padding: 12px 12px;
+            text-align: center;
+            width: 200px;
+            font-size: 18px;
+            box-shadow: 8px 8px 12px 4px #E0E0E0;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div class="loadingdiv" id="loading" style="display:none;">
+        <img class="loading" src="img/loading.gif">
+    </div>
+    <div class="spacehd"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="width:100%; padding:0 0 0 10px; float:left"><a class="navbar-brand js-scroll-trigger"
+                    href="index.html" style="float:left;"><img class="logo" src="./img/logo.png" width="200px"
+                        alt="MD2019"><span style="font-size:10px; color:#666;">CONFERENCE MANAGEMENT SYSTEM</span></a>
+            </div>
+            <div style="float:none"></div>
+        </div>
+    </nav>
+    <div class="section bg-full">
+        <div class="row login">
+            <div class="container">
+                <div class="box">
+                    <h1>MD2019 Users Administration</h1>
+                    <p>Please fill in the following information in order to create a CMS account. Required fields are
+                        marked with * .</p>
+
+                    <div class="form-bg">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="tag-bg">User Credentials</div>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row" style="padding-top:25px;">
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label
+                                            style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+                                                style="color:#FF0000;">*</span>E-mail :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_email' type='text' class='form-control' placeholder='*E-mail'
+                                            name='ichm_email' required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Password :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_psd' type='text' class='form-control' placeholder='*Password'
+                                            name='ichm_psd' required='required'>
+                                    </div>
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Confirm password :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_checkpsd' type='text' class='form-control'
+                                            placeholder='*Confirm password' name='ichm_checkpsd' required='required'>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-bg">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="tag-bg">User Informetion</div>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row" style="padding-top:25px;">
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label
+                                            style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+                                                style="color:#FF0000;">*</span>Title :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_title' type='text' class='form-control' placeholder='*Title'
+                                            name='ichm_title' required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>First name :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_fname' type='text' class='form-control'
+                                            placeholder='*First name' name='ichm_fname' required='required'>
+                                    </div>
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Last/Familt Name :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_lname' type='text' class='form-control'
+                                            placeholder='*Last/Familt Name' name='ichm_lname' required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Country :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <select class='form-control' id="ichm_country">
+                                            <option value="0">select an option</option>
+                                        </select>
+                                    </div>
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Organization :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_orga' type='text' class='form-control' name='ichm_orga'
+                                            required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Department :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_dept' type='text' class='form-control' name='ichm_dept'
+                                            required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Street :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_street' type='text' class='form-control' name='ichm_street'
+                                            required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>City :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_city' type='text' class='form-control' name='ichm_city'
+                                            required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'>Area/State :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_area' type='text' class='form-control' placeholder='Area/State'
+                                            name='ichm_area' required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Postal code :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_code' type='text' class='form-control'
+                                            placeholder='*Postal code' name='ichm_code' required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'><span
+                                                style="color:#FF0000;">*</span>Telephone :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_phone' type='text' class='form-control' placeholder='*Telephone'
+                                            name='ichm_phone' required='required'>
+                                    </div>
+
+                                    <div class='col-sm-3' style='text-align: right;'>
+                                        <label style='font-size:20px; color:#595758'>Fax :</label>
+                                    </div>
+                                    <div class='col-sm-9' style="padding-bottom:25px;">
+                                        <input id='ichm_fax' type='text' class='form-control' placeholder='*Fax'
+                                            name='ichm_fax' required='required'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:25px;">
+                        <div class='col-sm-5' style='text-align: right;'>
+                            <input type="checkbox" id="sub" value='1'>
+                        </div>
+                        <div class='col-sm-7' style="padding-bottom:25px;">
+                            <label style='font-size:20px; color:#595758'>Subscribe me to the International
+                                Newsletter</label>
+                            </label>
+                        </div>
+                        <div class='col-sm-3' style='text-align: right;'>
+
+                        </div>
+                        <div class='col-sm-3'>
+                            <input type="button" name="button" id="button" class="button" value='CREATE ACCOUNT' />
+                        </div>
+                        <div class='col-sm-3'>
+                            <div class="canbutton" id="cancel_btn">CANCEL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/cookie.js?ver=2019092501"></script>
+    <script src="js/ICHM0002.js?ver=2019092501"></script>
+    <script src="js/ICHM0010.js?ver=2019110601"></script>
+    <script>
+        getCountry();
+    </script>
+</body>
+
+</html>

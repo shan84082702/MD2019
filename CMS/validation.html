@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta http-equiv="pragma" content="no-cache"/> 
+	<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+	<meta http-equiv="expires" content="0"/>
+
+    <title>MD 2019</title>
+    <!-- Bootstrap core CSS  -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/CMS_style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+    <div class="loadingdiv" id="loading" style="display:none;">
+        <img class="loading" src="img/loading.gif">
+    </div>
+    <div class="spacehd"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a class="navbar-brand js-scroll-trigger" href="index.html" style="float:left;"><img class="logo"
+                            src="./img/logo.png" width="200px" alt="MD2019"><span
+                            style="font-size:10px; color:#666;">CONFERENCE MANAGEMENT SYSTEM</span></a>
+                </div>
+                <div class="col-sm-2">
+                    <input type='button' id='logout_btn' value='logout' class='bnlogin'>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="margin-top:57px; background-color:#EEE;"
+        id="mainNav">
+        <div class="container">
+            <div class="row" id="menu">
+            </div>
+        </div>
+    </nav>
+    <form enctype="multipart/form-data" id="identityinfo" method="POST" name="identityinfo">
+        <div class="row mainrow">
+            <div class="container">
+                <div class="weldiv" style="width:900px;padding-bottom:20px;">
+                    <h5>Identity Validation</h5>
+                    <p style="line-height:15pt;">若您是國際學生，請上傳您的學生證圖片(有名字的那一面)</br>(If you are a International student,
+                        please upload your student ID card image(the side with name).)</p>
+                    <p style="line-height:15pt;">若您是台灣投稿者，請上傳您的身分證(或居留證)圖片(有名字的那一面)</br>(If you are a Taiwanese
+                        participant, please upload your national identification card (or resident certificate) image(the
+                        side with name).)</p>
+                    <p style="margin-left:10px;line-height:15pt;">●若您是學生，請上傳您的學生證圖片(有名字的那一面)</br>(If you are a student,
+                        please upload your student ID card image(the side with name).)</p>
+                    <p style="margin-left:10px;line-height:15pt;">●若您是台灣醫學設計學會會員，請提供您的會員證編號；若您是台塑員工，請提供您的工作證編號</br>(If
+                        you are a Medical Design Member, please fill your membership card number;if you are an Employee
+                        in Formosa Plastics Group, please fill your employee card number</p>
+                </div>
+                <div class="row">
+                    <div class='col-sm-12'>
+                        <p style="line-height:15pt;">Please fill in the of following. Required fields are marked
+                            with<span style="color:red">*<span></p>
+                    </div>
+                    <div class='col-sm-3' style="margin-top:10px;">
+                        <label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+                                style="color:#FF0000;">*</span>Nationality :</label>
+                    </div>
+                    <div class='col-sm-9' style="margin-top:10px;padding-bottom:25px;">
+                        <select class='form-control' id="nationality">
+                            <option value="0">International (Non Taiwanese)</option>
+                            <option value="1">Taiwanese</option>
+                        </select>
+                    </div>
+                    <div style="border:1px #595758 dashed;margin-top:10px;margin-bottom:25px;display:none;width:1200px;" id="idCard_area">
+                        <div class='col-sm-12' style="margin-top:5px;">
+                            <label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'>National
+                                identification card (or resident
+                                certificate) image</label>
+                        </div>
+                        <div class='col-sm-9' style="margin-top:5px;">
+                            <p id="IDCard">(You haven't upload any image.)</p>
+                            <hr>
+                        </div>
+                        <div class='row' id="upload_area">
+                            <div class='col-sm-12' style='text-align: left;'>
+                                <label for='ID' style='font-size:20px; color:#595758'><span
+                                        style="color:#FF0000;">*</span>Select national identification card (or
+                                    resident
+                                    certificate) image(the side with name) to upload</label>
+                            </div>
+                            <div class='col-sm-12 fileContainer' style="margin-top:10px;margin-left:10px;">
+                                <input type="file" name="upimg" id="upimg" accept="image/*" />
+                            </div>
+                            <div class='col-sm-12 fileContainer' style="margin-left:10px;">
+                                <p>(maximum file size 150MB)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-sm-3' style="margin-top:10px;display:none;" id="stu_area1">
+                        <label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+                                style="color:#FF0000;">*</span>Are you a student?</label>
+                    </div>
+                    <div class='col-sm-9' style="margin-top:10px;padding-bottom:25px;display:none;" id="stu_area2">
+                        <select class='form-control' id="stu_option">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div style="border:1px #595758 dashed;width:1200px;margin-top:10px;margin-bottom:25px;" id="studentCard_area">
+                        <div class='col-sm-12' style="margin-top:5px;">
+                            <label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'>Student
+                                ID
+                                card image</label>
+                        </div>
+                        <div class='col-sm-9' style="margin-top:5px;">
+                            <p id="studentIDCard">(You haven't upload any image.)</p>
+                            <hr>
+                        </div>
+                        <div class='row' id="upload2_area">
+                            <div class='col-sm-12' style='text-align: left;'>
+                                <label for='ID' style='font-size:20px; color:#595758'><span
+                                        style="color:#FF0000;">*</span>Select student ID card image(the side with
+                                    name)
+                                    to upload</label>
+                            </div>
+                            <div class='col-sm-12 fileContainer' style="margin-top:10px;margin-left:10px;">
+                                <input type="file" name="upimg2" id="upimg2" accept="image/*" />
+                            </div>
+                            <div class='col-sm-12 fileContainer' style="margin-left:10px;">
+                                <p>(maximum file size 150MB)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-sm-3' style="margin-top:10px;display: none;" id="group_area1">
+                        <label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+                                style="color:#FF0000;">*</span>Group :</label>
+                    </div>
+                    <div class='col-sm-9' style="margin-top:10px;padding-bottom:25px;display: none;" id="group_area2">
+                        <select class='form-control' id="groupType">
+                            <option value="0">None</option>
+                            <option value="1">Medical Design Member</option>
+                            <option value="2">Employee in Formosa Plastics Group</option>
+                        </select>
+                    </div>
+                    <div class='col-sm-3' id="card_area1" style="display:none;">
+                        <label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'><span
+                                style="color:#FF0000;">*</span>Card number :</label>
+                    </div>
+                    <div class='col-sm-9' id="card_area2" style="display:none;padding-bottom:25px;">
+                        <input id='memberNo' name='memberNo' type='text' class='form-control'
+                            placeholder='*Membership card number/Employee card number'>
+                    </div>
+                    <div class='col-sm-3'>
+                        <label style='font-size:20px; color:#595758; text-align:center; margin-top:10px;'>Validation
+                            result
+                            :</label>
+                    </div>
+                    <div class='col-sm-9' style="padding-bottom:25px;">
+                        <p id="validation_result">(You haven't verified yet, so we regard you as a international
+                            participant.)</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="container" id="bnarea" style="padding-top:25px;">
+                    <div class="row">
+                        <div class='col-sm-3' style='text-align: left;'>
+                            <div class="button" id="identity_btnback">CANCEL/BACK</div>
+                        </div>
+                        <div class='col-sm-6'>
+                            <!--<div class="button" id="identity_btndone">      UPLOAD      </div>-->
+                            <input type="submit" id="identity_btndone" class="button" value="      UPLOAD      " />
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+    <script src="js/cookie.js?ver=2019092501"></script>
+    <script src="js/ICHM0001.js?ver=2019092501"></script>
+    <script src="js/ICHM0010.js?ver=2019110602"></script>
+    <script>
+        validation_init();
+    </script>
+</body>
+
+</html>

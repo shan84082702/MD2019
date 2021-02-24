@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta http-equiv="pragma" content="no-cache"/> 
+	<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+	<meta http-equiv="expires" content="0"/>
+
+    <title>MD 2019</title>
+    <!-- Bootstrap core CSS  -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+</head>
+
+<body id="page-top">
+    <div class="loadingdiv" id="loading" style="display:none;">
+        <img class="loading" src="img/loading.gif">
+    </div>
+    <div class="spacehd"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="width:100%; padding:0 0 0 10px; float:left"><a class="navbar-brand js-scroll-trigger"
+                    href="index.html" style="float:left;"><img class="logo" src="./img/logo.png" width="200px"
+                        alt="MD2019"><span style="font-size:10px; color:#666;">CONFERENCE MANAGEMENT SYSTEM</span></a>
+            </div>
+            <div style="float:none"></div>
+        </div>
+    </nav>
+    <div class="bg-full">
+        <div class="container">
+            <div class="login row">
+                <div class="login-box">
+                    <div style="font-size:30px; margin:30px 0; font-weight:700;">Log In</div>
+                    <input type="text" id="login_username" name="login_username" class="form-control c-square c-theme"
+                        value="" size="20" maxlength="255" placeholder="E-mail" style="margin-top:10px;">
+                    <input type="password" id="password" name="password" size="20" maxlength="255"
+                        class="form-control c-square c-theme input-lg" placeholder="Password (case sensitive)"
+                        style="margin-top:10px;">
+                    <div style="margin:10px 0; text-align:right;">
+                        <input type="button" name="usr_login" id="login_btn" value="Login"
+                            class="btn btn-lg c-btn-square btn-primary c-btn-uppercase c-btn-bold">
+                    </div>
+                    <div style="font-size:16px; margin:30px 0 10px 0; font-weight:600;">Forgot your password?</div>
+                    <div>
+                        <div class="form-group has-feedback">
+                            <input type="text" id="forgot_username" name="forgot_username"
+                                class="form-control  c-square c-theme" value="" size="20" maxlength="255"
+                                placeholder="E-mail">
+                            <span class="glyphicon glyphicon-envelope form-control-feedback c-font-grey"></span>
+                        </div>
+                    </div>
+                    <div style="margin:10px 0; text-align:right;">
+                        <input type="submit" name="forgotPW" id="forgotPW" value="Send Information"
+                            class="btn btn-sm c-btn-square btn c-btn-uppercase ">
+                    </div>
+                    <div style="font-size:14px; margin:10px 0;">Please enter your email, to receive details on changing
+                        your password.</div>
+                </div>
+                <div class="account-box">
+                    <h3 style="font-size:30px; margin:30px 0; font-weight:700;"> Don't have an account yet?</h3>
+                    The Conference Management System (CMS) can be used to:
+                    <ul style="margin-top: 10px;">
+                        <li style="padding:5px"> submit paper and poster proposals </li>
+                        <li style="padding:5px"> submit the camera-ready version of accepted contributions </li>
+                        <li style="padding:5px"> register for the Conference</li>
+                        <li style="padding:5px"> handle the invited parallel sessions</li>
+                    </ul>
+                    <div style="margin:30px 0px 0px 20px;">
+                        <a href="register.html"> Create an account </a> to start using the CMS <br></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-full" style="background-color:#CCC;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4" style="text-align: left; height:100px; padding:10px;">
+                    <div>
+                        You must have <a class="underline" href="#" target="_blank">session cookies </a> enabled on your
+                        browser in order to login. <br>
+                    </div>
+                </div>
+                <div class="col-sm-4" style="text-align: left; height:100px; padding:10px;">
+                    <div>
+                        Users will be <strong>automatically logged out</strong>, if they are idle for more than 120
+                        minutes or they have bad internet connection.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/cookie.js?ver=2019092501"></script>
+    <script src="js/ICHM0010.js?ver=2019110601"></script>
+    <script>
+        loginCheckToken();
+    </script>
+</body>
+
+</html>
